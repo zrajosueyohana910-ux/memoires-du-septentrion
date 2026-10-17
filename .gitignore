@@ -5,3 +5,16 @@ __pycache__/
 *.backup
 noeuds.backup_*/
 .DS_Store
+
+# Fichiers de travail / temporaires
+JM/
+lk/
+files/
+files.zip
+files(1).zip
+noeuds.zip
+argparse
+patrimoine_ontologie.json
+note-de-cadrage-v1.1.md
+*.docx
+*.zip

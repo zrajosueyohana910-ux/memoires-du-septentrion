@@ -1,0 +1,347 @@
+@prefix collection: <http://memoria-nord.cm/id/collection/> .
+@prefix dataset: <http://memoria-nord.cm/id/dataset/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix fete: <http://memoria-nord.cm/id/fete/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix instrument: <http://memoria-nord.cm/id/instrument/> .
+@prefix langue: <http://memoria-nord.cm/id/langue/> .
+@prefix lieu: <http://memoria-nord.cm/id/lieu/> .
+@prefix mv: <http://memoria-nord.cm/vocab#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix personne: <http://memoria-nord.cm/id/personne/> .
+@prefix peuple: <http://memoria-nord.cm/id/peuple/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rituel: <http://memoria-nord.cm/id/rituel/> .
+@prefix schema: <https://schema.org/> .
+@prefix site: <http://memoria-nord.cm/id/site/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mv:Fete a rdfs:Class ;
+    rdfs:label "Fête"@fr ;
+    rdfs:subClassOf schema:Event .
+
+mv:Instrument a rdfs:Class ;
+    rdfs:label "Instrument de musique"@fr .
+
+mv:Langue a rdfs:Class ;
+    rdfs:label "Langue"@fr ;
+    rdfs:subClassOf dct:LinguisticSystem .
+
+mv:Lieu a rdfs:Class ;
+    rdfs:label "Lieu"@fr ;
+    rdfs:subClassOf schema:Place .
+
+mv:Peuple a rdfs:Class ;
+    rdfs:label "Peuple"@fr ;
+    rdfs:subClassOf foaf:Group .
+
+mv:RecueilDeContes a rdfs:Class ;
+    rdfs:label "Recueil de contes"@fr ;
+    rdfs:subClassOf edm:ProvidedCHO .
+
+mv:Rituel a rdfs:Class ;
+    rdfs:label "Rituel"@fr ;
+    rdfs:subClassOf schema:Event .
+
+mv:Site a rdfs:Class ;
+    rdfs:label "Site patrimonial"@fr ;
+    rdfs:subClassOf schema:Place .
+
+collection:contes-goggo-addi a mv:RecueilDeContes,
+        edm:ProvidedCHO ;
+    mv:associeAuPeuple peuple:fulbe ;
+    dct:contributor personne:ursula-baumgardt ;
+    dct:creator personne:goggo-addi ;
+    dct:language langue:fulfulde ;
+    dct:temporal "1985/1989" ;
+    skos:prefLabel "Contes de Goggo Addi"@fr ;
+    prov:wasAttributedTo personne:ursula-baumgardt .
+
+dataset:archive a dcat:Dataset ;
+    dct:created "2026-10-13"^^xsd:date ;
+    dct:creator "ZRA ; Bambe Kennedy" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    skos:prefLabel "MémoireS du Nord"@fr .
+
+fete:goalala a mv:Fete ;
+    dct:description "Fête agricole et pastorale."@fr ;
+    skos:prefLabel "Goalala"@fr .
+
+fete:maray a mv:Fete ;
+    dct:description "Fête agricole et pastorale."@fr ;
+    skos:prefLabel "Maray"@fr .
+
+fete:msla a mv:Fete ;
+    dct:description "Fête agricole et pastorale."@fr ;
+    skos:prefLabel "Msla"@fr .
+
+instrument:balafon a mv:Instrument ;
+    dct:description "Xylophone à calebasses."@fr ;
+    skos:exactMatch wd:Q789141 ;
+    skos:prefLabel "Balafon"@fr .
+
+instrument:corne-flute a mv:Instrument ;
+    dct:description "Instrument à vent rituel."@fr ;
+    skos:prefLabel "Corne-flûte"@fr .
+
+instrument:tambour-d-eau a mv:Instrument ;
+    dct:description "Percussion rituelle."@fr ;
+    skos:prefLabel "Tambour d'eau"@fr .
+
+rituel:rituels-mafa a mv:Rituel ;
+    mv:pratiquePar peuple:mafa ;
+    dct:description "Sacrifices pratiqués sur les sites Diy-Gid-Biy."@fr ;
+    skos:prefLabel "Rituels mafa"@fr ;
+    schema:location site:diy-gid-biy .
+
+site:rhumsiki a mv:Site ;
+    dct:description "Village kapsiki emblématique."@fr ;
+    dct:relation peuple:kapsiki ;
+    skos:prefLabel "Rhumsiki"@fr ;
+    schema:containedInPlace lieu:monts-mandara .
+
+langue:psikye a mv:Langue ;
+    skos:exactMatch wd:Q56304 ;
+    skos:prefLabel "Psikyɛ"@fr ;
+    skos:scopeNote "Langue tchadique (branche Biu-Mandara), environ 40 500 locuteurs en 1982."@fr .
+
+lieu:bibemi a mv:Lieu ;
+    skos:prefLabel "Bibemi"@fr ;
+    schema:containedInPlace lieu:cameroun .
+
+personne:goggo-addi a foaf:Person ;
+    skos:prefLabel "Goggo Addi"@fr ;
+    foaf:name "Goggo Addi" ;
+    schema:birthDate "1911"^^xsd:gYear ;
+    schema:birthPlace lieu:bibemi ;
+    schema:deathDate "1999-11"^^xsd:gYearMonth ;
+    schema:deathPlace lieu:garoua ;
+    schema:jobTitle "Conteuse"@fr ;
+    schema:knowsLanguage langue:fulfulde .
+
+peuple:kapsiki a mv:Peuple ;
+    dct:language langue:psikye ;
+    dct:spatial lieu:monts-mandara ;
+    skos:closeMatch wd:Q2437423 ;
+    skos:prefLabel "Kapsiki"@fr .
+
+peuple:mafa a mv:Peuple ;
+    dct:relation site:diy-gid-biy ;
+    skos:closeMatch wd:Q3276439 ;
+    skos:prefLabel "Mafa"@fr ;
+    skos:scopeNote "Présents depuis le XVe siècle, liés au site Diy-Gid-Biy."@fr .
+
+site:lamidat-de-garoua a mv:Site ;
+    dct:description "Chefferie traditionnelle peule."@fr ;
+    dct:relation peuple:fulbe ;
+    skos:prefLabel "Lamidat de Garoua"@fr ;
+    schema:containedInPlace lieu:garoua .
+
+lieu:cameroun a mv:Lieu ;
+    owl:sameAs wd:Q1009 ;
+    skos:prefLabel "Cameroun"@fr .
+
+lieu:garoua a mv:Lieu ;
+    owl:sameAs wd:Q157915 ;
+    skos:prefLabel "Garoua"@fr ;
+    schema:containedInPlace lieu:cameroun .
+
+personne:ursula-baumgardt a foaf:Person ;
+    skos:prefLabel "Ursula Baumgardt"@fr ;
+    foaf:name "Ursula Baumgardt" ;
+    schema:affiliation "INALCO ; CNRS" ;
+    schema:jobTitle "Professeure d'université et chercheuse"@fr .
+
+peuple:fulbe a mv:Peuple ;
+    dct:language langue:fulfulde ;
+    dct:relation site:lamidat-de-garoua ;
+    skos:altLabel "Peuls"@fr ;
+    skos:exactMatch wd:Q202575 ;
+    skos:prefLabel "Fulbe"@fr ;
+    skos:scopeNote "Élite islamisée, classe dirigeante du Nord."@fr .
+
+site:diy-gid-biy a mv:Site ;
+    mv:critereUnesco "iii" ;
+    mv:inscritUnesco "2025-07"^^xsd:gYearMonth ;
+    mv:siecleDebut 12 ;
+    mv:siecleFin 17 ;
+    dct:description "Ensemble de vestiges en pierre sèche."@fr ;
+    owl:sameAs wd:Q5285004 ;
+    skos:prefLabel "Diy-Gid-Biy"@fr ;
+    schema:containedInPlace lieu:monts-mandara .
+
+langue:fulfulde a mv:Langue ;
+    skos:exactMatch wd:Q33454 ;
+    skos:prefLabel "Fulfulde"@fr ;
+    skos:scopeNote "Langue véhiculaire du Nord-Cameroun."@fr .
+
+lieu:monts-mandara a mv:Lieu ;
+    dct:description "Chaîne volcanique entre le Cameroun et le Nigeria."@fr ;
+    owl:sameAs wd:Q1888885 ;
+    skos:prefLabel "Monts Mandara"@fr .
+
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema:   <https://schema.org/> .
+@prefix mv:       <http://memoria-nord.cm/vocab#> .
+@prefix site:     <http://memoria-nord.cm/id/site/> .
+@prefix lieu:     <http://memoria-nord.cm/id/lieu/> .
+@prefix collection: <http://memoria-nord.cm/id/collection/> .
+@prefix rituel:   <http://memoria-nord.cm/id/rituel/> .
+@prefix fete:     <http://memoria-nord.cm/id/fete/> .
+@prefix instrument: <http://memoria-nord.cm/id/instrument/> .
+@prefix peuple:   <http://memoria-nord.cm/id/peuple/> .
+@prefix langue:   <http://memoria-nord.cm/id/langue/> .
+
+# ============================================================
+# CHAMPS D'AFFICHAGE POUR LE SITE REACT
+# Règle : chaque entité affichable reçoit mv:region, mv:categorie,
+# mv:niveau, schema:image, dct:rights, dct:source
+# ============================================================
+
+# --- SITES ---
+site:diy-gid-biy
+    mv:region "Extrême-Nord" ;
+    mv:categorie "matériel" ;
+    mv:niveau "débutant" ;
+    mv:miseEnAvant true ;
+    schema:image <http://memoria-nord.cm/media/diy-gid-biy.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://whc.unesco.org/fr/list/777/> , <https://fr.wikipedia.org/wiki/Diy-Gid-Biy> .
+
+site:rhumsiki
+    mv:region "Extrême-Nord" ;
+    mv:categorie "matériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/rhumsiki.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Rhumsiki> .
+
+site:lamidat-de-garoua
+    mv:region "Nord" ;
+    mv:categorie "matériel" ;
+    mv:niveau "débutant" ;
+    mv:miseEnAvant true ;
+    schema:image <http://memoria-nord.cm/media/lamidat-garoua.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Lamidat_de_Garoua> .
+
+# --- CONTES ---
+collection:contes-goggo-addi
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "débutant" ;
+    mv:miseEnAvant true ;
+    schema:image <http://memoria-nord.cm/media/contes-goggo-addi.jpg> ;
+    dct:rights "Droits du fonds INALCO/CNRS à préciser" ;
+    dct:source <https://www.inalco.fr/> , <https://fr.wikipedia.org/wiki/Goggo_Addi> .
+
+# --- RITUELS ET FÊTES ---
+rituel:rituels-mafa
+    mv:region "Extrême-Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/rituels-mafa.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Mafa> .
+
+fete:msla
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/fete-msla.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Fulbe> .
+
+fete:goalala
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/fete-goalala.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Fulbe> .
+
+fete:maray
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/fete-maray.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Fulbe> .
+
+# --- INSTRUMENTS ---
+instrument:balafon
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "débutant" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/balafon.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Balafon> .
+
+instrument:tambour-d-eau
+    mv:region "Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/tambour-eau.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Tambour_d%27eau> .
+
+instrument:corne-flute
+    mv:region "Extrême-Nord" ;
+    mv:categorie "immatériel" ;
+    mv:niveau "intermédiaire" ;
+    mv:miseEnAvant false ;
+    schema:image <http://memoria-nord.cm/media/corne-flute.jpg> ;
+    dct:rights "CC BY-SA 4.0" ;
+    dct:source <https://fr.wikipedia.org/wiki/Corne_de_chasse> .
+
+# ============================================================
+# DESCRIPTIONS ENRICHIES (pour l'affichage)
+# ============================================================
+
+site:diy-gid-biy
+    dct:description "Ensemble de vestiges en pierre sèche construits entre le XIIe et le XVIIe siècle dans les Monts Mandara. Inscrit au patrimoine mondial de l'UNESCO en juillet 2025 sous le critère (iii)."@fr .
+
+site:rhumsiki
+    dct:description "Village kapsiki emblématique des Monts Mandara, célèbre pour son paysage volcanique et la pratique traditionnelle de la divination par le crabe."@fr .
+
+site:lamidat-de-garoua
+    dct:description "Chefferie traditionnelle peule de Garoua, symbole de l'organisation politique et sociale du Nord-Cameroun. Le lamidat reste aujourd'hui une institution centrale de la région."@fr .
+
+collection:contes-goggo-addi
+    dct:description "Recueil des contes de la conteuse peule Goggo Addi (1911-1999), enregistrés et transcrits par Ursula Baumgardt entre 1985 et 1989. Une archive sonore majeure pour la littérature orale fulfulde."@fr .
+
+rituel:rituels-mafa
+    dct:description "Sacrifices et cérémonies pratiqués par le peuple mafa sur les sites Diy-Gid-Biy, mêlant vénération des ancêtres et protection des lieux sacrés."@fr .
+
+fete:msla
+    dct:description "Fête agricole et pastorale célébrée par les communautés peules du Nord-Cameroun, marquant la fin des récoltes et le début de la saison sèche."@fr .
+
+fete:goalala
+    dct:description "Célébration traditionnelle liée aux cycles agricoles et pastoraux du Nord-Cameroun, rythmée par des danses et des joutes."@fr .
+
+fete:maray
+    dct:description "Fête communautaire qui marque les transitions saisonnières et rassemble les éleveurs et agriculteurs du Nord-Cameroun."@fr .
+
+instrument:balafon
+    dct:description "Xylophone à calebasses, instrument de percussion idiophone mélodique utilisé lors des cérémonies et fêtes traditionnelles d'Afrique de l'Ouest et centrale."@fr .
+
+instrument:tambour-d-eau
+    dct:description "Percussion rituelle composée d'une calebasse remplie d'eau, utilisée lors de cérémonies traditionnelles pour produire des sons aquatiques uniques."@fr .
+
+instrument:corne-flute
+    dct:description "Instrument à vent rituel fabriqué à partir d'une corne d'animal, utilisé lors des cérémonies et rituels de chasse."@fr .

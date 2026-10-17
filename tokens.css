@@ -1,0 +1,59 @@
+/* ============================================================
+   TOKENS — Charte graphique « Forêt & Mémoire »
+   MémoireS du Nord — Archive hypermédia sémantique
+   ============================================================ */
+
+:root {
+  /* ----- Couleurs principales ----- */
+  --vert-profond:    #1B4332;   /* En-tête, pied de page */
+  --vert-mousse:     #2D6A4F;   /* Bordures, hover */
+  --or-safran:       #D4A017;   /* Accents, liens, traits */
+  --rouge-terre:     #A63A2A;   /* Alertes, mise en avant */
+
+  /* ----- Fonds ----- */
+  --creme:           #FAF6EE;   /* Fond principal */
+  --blanc-casse:     #F5F0E1;   /* Cartes, blocs */
+  --papier:          #EFE7D3;   /* Encadrés, citations */
+
+  /* ----- Textes ----- */
+  --encre:           #1A2E22;   /* Texte principal */
+  --texte-secondaire:#5C6B5A;   /* Métadonnées, légendes */
+  --texte-clair:     #FAF6EE;   /* Texte sur fond sombre */
+
+  /* ----- Typographies ----- */
+  --font-titre: "Cormorant Garamond", "Georgia", serif;
+  --font-texte: "Inter", "system-ui", sans-serif;
+  --font-code:  "JetBrains Mono", "Courier New", monospace;
+
+  /* ----- Espacements ----- */
+  --espace-xs:  0.5rem;
+  --espace-sm:  1rem;
+  --espace-md:  2rem;
+  --espace-lg:  4rem;
+
+  /* ----- Rayons ----- */
+  --rayon-sm:   0.25rem;
+  --rayon-md:   0.5rem;
+  --rayon-lg:   1rem;
+
+  /* ----- Transitions ----- */
+  --transition: 0.2s ease;
+
+  /* ----- Ombres ----- */
+  --ombre-sm: 0 2px 4px rgba(26, 46, 34, 0.06);
+  --ombre-md: 0 4px 12px rgba(26, 46, 34, 0.1);
+  --ombre-lg: 0 8px 24px rgba(26, 46, 34, 0.15);
+}
+
+/* ----- Mode sombre automatique ----- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --creme:           #0F1E15;
+    --blanc-casse:     #1A2E22;
+    --papier:          #24392D;
+    --encre:           #F0EAD6;
+    --texte-secondaire:#A8B5A0;
+    --vert-profond:    #0A1610;
+    --vert-mousse:     #2D6A4F;
+  }
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sites patrimoniaux : MémoireS du Septentrion</title>
+<meta name="description" content="Lieux et monuments remarquables du Septentrion.">
+
+<!-- Polices Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CHARTE « FORÊT & MÉMOIRE »
+   ============================================================ */
+:root {
+  --vert-profond:    #1B4332;
+  --vert-mousse:     #2D6A4F;
+  --or-safran:       #D4A017;
+  --rouge-terre:     #A63A2A;
+  --creme:           #FAF6EE;
+  --blanc-casse:     #F5F0E1;
+  --papier:          #EFE7D3;
+  --encre:           #1A2E22;
+  --texte-secondaire:#5C6B5A;
+  --texte-clair:     #FAF6EE;
+  --font-titre: "Cormorant Garamond", Georgia, serif;
+  --font-texte: "Inter", system-ui, sans-serif;
+  --espace-xs: 0.5rem; --espace-sm: 1rem; --espace-md: 2rem; --espace-lg: 4rem;
+  --rayon-sm: 0.25rem; --rayon-md: 0.5rem; --rayon-lg: 1rem;
+  --ombre-sm: 0 2px 4px rgba(26,46,34,0.06);
+  --ombre-md: 0 4px 12px rgba(26,46,34,0.1);
+  --ombre-lg: 0 8px 24px rgba(26,46,34,0.15);
+  --transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --creme: #0F1E15;
+    --blanc-casse: #1A2E22;
+    --papier: #24392D;
+    --encre: #F0EAD6;
+    --texte-secondaire: #A8B5A0;
+    --vert-profond: #0A1610;
+  }
+}
+
+/* === RESET === */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-texte);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  background: var(--creme);
+  color: var(--encre);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === TYPOGRAPHIE === */
+h1, h2, h3, h4 {
+  font-family: var(--font-titre);
+  color: var(--vert-profond);
+  line-height: 1.2;
+  margin: 0 0 var(--espace-sm);
+}
+h1 { font-size: 2.75rem; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 600; margin-top: var(--espace-md); }
+h3 { font-size: 1.35rem; font-weight: 600; }
+
+a {
+  color: var(--vert-mousse);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), color var(--transition);
+}
+a:hover { border-bottom-color: var(--or-safran); color: var(--vert-profond); }
+
+/* === LIEN D'ÉVITEMENT === */
+.skip {
+  position: absolute; left: -9999px; top: auto;
+  padding: 0.75rem 1rem; background: var(--vert-profond); color: var(--texte-clair);
+  z-index: 100;
+}
+.skip:focus { left: 0; top: 0; }
+
+/* === FOCUS === */
+:focus-visible {
+  outline: 3px solid var(--or-safran);
+  outline-offset: 3px;
+  border-radius: var(--rayon-sm);
+}
+
+/* === EN-TÊTE === */
+.entete {
+  background: var(--vert-profond);
+  color: var(--texte-clair);
+  padding: var(--espace-md) 0;
+  border-bottom: 4px solid var(--or-safran);
+}
+
+.entete__inner {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 var(--espace-sm);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espace-sm);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  color: var(--texte-clair);
+  text-decoration: none;
+  border: none;
+}
+.logo__nom {
+  font-family: var(--font-titre);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--texte-clair);
+  line-height: 1;
+}
+.logo__sous {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--or-safran);
+  margin-top: 0.25rem;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+.nav a {
+  color: var(--texte-clair);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--rayon-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  background: rgba(250, 246, 238, 0.08);
+  transition: background var(--transition);
+}
+.nav a:hover {
+  background: var(--or-safran);
+  color: var(--vert-profond);
+  border: none;
+}
+
+/* === CONTENU PRINCIPAL === */
+.contenu {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--espace-lg) var(--espace-sm);
+}
+
+.noeud__entete {
+  margin-bottom: var(--espace-lg);
+  padding-bottom: var(--espace-md);
+  border-bottom: 2px solid var(--or-safran);
+}
+
+.noeud__surtitre {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--or-safran);
+  margin: 0 0 var(--espace-sm);
+}
+
+.noeud__titre {
+  font-size: 3rem;
+  margin-bottom: var(--espace-sm);
+}
+
+.noeud__resume {
+  font-size: 1.2rem;
+  color: var(--texte-secondaire);
+  font-style: italic;
+  max-width: 45rem;
+  margin: 0;
+}
+
+.noeud__corps {
+  margin-top: var(--espace-md);
+}
+.noeud__texte {
+  font-size: 1.1rem;
+  color: var(--encre);
+  line-height: 1.75;
+}
+
+/* === MÉDIAS === */
+figure {
+  margin: var(--espace-md) 0;
+  background: var(--blanc-casse);
+  border-radius: var(--rayon-md);
+  overflow: hidden;
+  box-shadow: var(--ombre-sm);
+}
+figure img, figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--papier);
+  min-height: 12rem;
+}
+figcaption {
+  padding: var(--espace-sm);
+  font-size: 0.9rem;
+  color: var(--texte-secondaire);
+  border-top: 1px solid var(--papier);
+  background: var(--creme);
+}
+audio { width: 100%; padding: var(--espace-sm); }
+
+/* === DÉTAILS / TRANSCRIPTION === */
+details {
+  margin: var(--espace-md) 0;
+  padding: var(--espace-sm) var(--espace-md);
+  background: var(--blanc-casse);
+  border-left: 4px solid var(--or-safran);
+  border-radius: var(--rayon-md);
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--vert-profond);
+  padding: var(--espace-xs) 0;
+}
+summary:hover { color: var(--or-safran); }
+
+/* === PIED DE PAGE === */
+.pied {
+  background: var(--vert-profond);
+  color: var(--texte-clair);
+  padding: var(--espace-lg) var(--espace-sm) var(--espace-md);
+  margin-top: var(--espace-lg);
+  border-top: 4px solid var(--or-safran);
+}
+.pied__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.pied p { margin: 0 0 var(--espace-xs); font-size: 0.9rem; }
+.pied__licence strong { color: var(--or-safran); }
+.pied__sources a { color: var(--or-safran); }
+.pied__sources a:hover { color: var(--texte-clair); }
+.pied__credit {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: var(--espace-md);
+}
+
+/* === CARTE INTERACTIVE === */
+#carte {
+  height: 24rem;
+  border-radius: var(--rayon-md);
+  margin: var(--espace-md) 0;
+  box-shadow: var(--ombre-md);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  h1, .noeud__titre { font-size: 2rem; }
+  h2 { font-size: 1.35rem; }
+  .contenu { padding: var(--espace-md) var(--espace-sm); }
+  .entete__inner { flex-direction: column; align-items: flex-start; }
+  .logo__nom { font-size: 1.4rem; }
+}
+
+/* === RÉDUCTION DE MOUVEMENT === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === LOI DE FITTS : zones tactiles ≥ 44px sur mobile === */
+@media (max-width: 640px) {
+  .nav a {
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .nav ul {
+    gap: 0.5rem;
+  }
+}
+
+/* === LOI DE FITTS : boutons larges === */
+.btn, button, .nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === NIELSEN n°3 : bouton retour === */
+.fil-ariane {
+  margin-bottom: var(--espace-md);
+  padding: var(--espace-xs) 0;
+}
+
+.fil-ariane a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--vert-mousse);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--rayon-sm);
+  min-height: 44px;
+  transition: background var(--transition);
+}
+
+.fil-ariane a:hover {
+  background: var(--blanc-casse);
+  color: var(--vert-profond);
+  text-decoration: none;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "http://memoria-nord.cm/page/noeud/n05",
+  "name": "Sites patrimoniaux",
+  "inLanguage": "fr",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MémoireS du Nord",
+    "url": "http://memoria-nord.cm/"
+  },
+  "about": [
+    {
+      "@id": "http://memoria-nord.cm/id/site/diy-gid-biy",
+      "name": "Diy-Gid-Biy"
+    },
+    {
+      "@id": "http://memoria-nord.cm/id/site/rhumsiki",
+      "name": "Rhumsiki"
+    },
+    {
+      "@id": "http://memoria-nord.cm/id/site/lamidat-de-garoua",
+      "name": "Lamidat de Garoua"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="entete__inner">
+    <a href="n01.html" class="logo">
+      <span class="logo__nom">MémoireS du Septentrion</span>
+      <span class="logo__sous">Archive hypermédia sémantique · Adamaoua · Nord · Extrême-Nord</span>
+    </a>
+    <nav aria-label="Navigation principale" class="nav">
+      <ul>
+        <li><a href="n01.html">Accueil</a></li>
+        <li><a href="n02.html">Explorer</a></li>
+        <li><a href="n08.html">Contribuer</a></li>
+        <li><a href="n09.html">À propos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="contenu">
+
+  <article class="noeud">
+    <header class="noeud__entete">
+      <h1 class="noeud__titre">Sites patrimoniaux</h1>
+      <p class="noeud__resume">Lieux et monuments remarquables du Septentrion.</p>
+    </header>
+
+    <figure><img src="../media/n05-1.jpg" alt="[À rédiger : description de la photo 1]"><figcaption>[Légende et crédit à rédiger]</figcaption></figure>
+
+    <div class="noeud__corps">
+      <p class="noeud__texte">
+Les sites patrimoniaux du Septentrion :
+</p>
+<ul class="noeud__liste">
+<li><a href="n10.html">Diy-Gid-Biy</a> — Vestiges en pierre sèche, inscrits à l'UNESCO en 2025</li>
+<li><strong>Rhumsiki</strong> — Village kapsiki emblématique des Monts Mandara</li>
+<li><strong>Lamidat de Garoua</strong> — Chefferie traditionnelle peule</li>
+</ul>
+    </div>
+
+    
+  </article>
+</main>
+
+<footer class="pied">
+  <div class="pied__inner">
+    <p class="pied__licence">
+      Métadonnées sous licence <strong>CC BY 4.0</strong>.
+      Médias et contes : droits à préciser.
+    </p>
+    <p class="pied__sources">
+      Sources :
+      <a href="n01.html">Accueil</a> ·
+      <a href="n08.html">Carte</a> ·
+      <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+      · <a href="404.html">Page 404</a>
+    </p>
+    <p class="pied__credit">
+      ZRA Josue Yohana et Bambe Kennedy — IBAI, Université de Garoua · Octobre 2026
+    </p>
+  </div>
+</footer>
+</body>
+</html>

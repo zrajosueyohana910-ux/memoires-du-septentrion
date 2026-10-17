@@ -1,0 +1,41 @@
+sujet,predicat,objet,type
+dataset:archive,dct:creator,ZRA ; Bambe Kennedy,string
+,dct:created,2026-10-13,date
+,dct:license,https://creativecommons.org/licenses/by/4.0/,uri
+peuple:kapsiki,dct:language,langue:psikye,uri
+,dct:spatial,lieu:monts-mandara,uri
+peuple:mafa,skos:scopeNote,"Présents depuis le XVe siècle, liés au site Diy-Gid-Biy.",fr
+,dct:relation,site:diy-gid-biy,uri
+peuple:fulbe,skos:altLabel,Peuls,fr
+,skos:scopeNote,"Élite islamisée, classe dirigeante du Nord.",fr
+,dct:language,langue:fulfulde,uri
+,dct:relation,site:lamidat-de-garoua,uri
+langue:psikye,skos:scopeNote,"Langue tchadique (branche Biu-Mandara), environ 40 500 locuteurs en 1982.",fr
+langue:fulfulde,skos:scopeNote,Langue véhiculaire du Nord-Cameroun.,fr
+site:diy-gid-biy,mv:siecleDebut,12,integer
+,mv:siecleFin,17,integer
+,mv:inscritUnesco,2025-07,gYearMonth
+,mv:critereUnesco,iii,string
+,schema:containedInPlace,lieu:monts-mandara,uri
+site:rhumsiki,dct:relation,peuple:kapsiki,uri
+,schema:containedInPlace,lieu:monts-mandara,uri
+site:lamidat-de-garoua,dct:relation,peuple:fulbe,uri
+,schema:containedInPlace,lieu:garoua,uri
+lieu:garoua,schema:containedInPlace,lieu:cameroun,uri
+lieu:bibemi,schema:containedInPlace,lieu:cameroun,uri
+collection:contes-goggo-addi,dct:creator,personne:goggo-addi,uri
+,dct:contributor,personne:ursula-baumgardt,uri
+,prov:wasAttributedTo,personne:ursula-baumgardt,uri
+,dct:language,langue:fulfulde,uri
+,dct:temporal,1985/1989,string
+,mv:associeAuPeuple,peuple:fulbe,uri
+rituel:rituels-mafa,mv:pratiquePar,peuple:mafa,uri
+,schema:location,site:diy-gid-biy,uri
+personne:goggo-addi,schema:jobTitle,Conteuse,fr
+,schema:knowsLanguage,langue:fulfulde,uri
+,schema:birthDate,1911,gYear
+,schema:birthPlace,lieu:bibemi,uri
+,schema:deathDate,1999-11,gYearMonth
+,schema:deathPlace,lieu:garoua,uri
+personne:ursula-baumgardt,schema:affiliation,INALCO ; CNRS,string
+,schema:jobTitle,Professeure d'université et chercheuse,fr

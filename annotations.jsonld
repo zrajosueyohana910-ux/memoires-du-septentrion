@@ -1,0 +1,93 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memoria-nord.cm/data/annotations/page-1",
+  "type": "AnnotationPage",
+  "items": [
+    {
+      "id": "http://memoria-nord.cm/data/annotations/diy-gid-biy-image-01-a1",
+      "type": "Annotation",
+      "created": "2026-10-13",
+      "creator": { "type": "Person", "name": "ZRA" },
+      "motivation": "identifying",
+      "body": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/id/site/diy-gid-biy",
+        "purpose": "identifying"
+      },
+      "target": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/media/diy-gid-biy-01.jpg",
+        "selector": {
+          "type": "FragmentSelector",
+          "conformsTo": "http://www.w3.org/TR/media-frags/",
+          "value": "xywh=pixel:150,90,420,280"
+        }
+      }
+    },
+    {
+      "id": "http://memoria-nord.cm/data/annotations/diy-gid-biy-image-01-a2",
+      "type": "Annotation",
+      "created": "2026-10-13",
+      "creator": { "type": "Person", "name": "ZRA" },
+      "motivation": "describing",
+      "body": {
+        "type": "TextualBody",
+        "language": "fr",
+        "format": "text/plain",
+        "purpose": "describing",
+        "value": "[À rédiger : description de la zone, utilisable comme texte alternatif]"
+      },
+      "target": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/media/diy-gid-biy-01.jpg",
+        "selector": {
+          "type": "FragmentSelector",
+          "conformsTo": "http://www.w3.org/TR/media-frags/",
+          "value": "xywh=pixel:150,90,420,280"
+        }
+      }
+    },
+    {
+      "id": "http://memoria-nord.cm/data/annotations/diy-gid-biy-video-01-a1",
+      "type": "Annotation",
+      "created": "2026-10-13",
+      "creator": { "type": "Person", "name": "ZRA" },
+      "motivation": "identifying",
+      "body": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/id/site/diy-gid-biy",
+        "purpose": "identifying"
+      },
+      "target": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/media/diy-gid-biy-01.mp4",
+        "selector": {
+          "type": "FragmentSelector",
+          "conformsTo": "http://www.w3.org/TR/media-frags/",
+          "value": "t=12,25"
+        }
+      }
+    },
+    {
+      "id": "http://memoria-nord.cm/data/annotations/contes-audio-01-a1",
+      "type": "Annotation",
+      "created": "2026-10-13",
+      "creator": { "type": "Person", "name": "ZRA" },
+      "motivation": "identifying",
+      "body": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/id/collection/contes-goggo-addi",
+        "purpose": "identifying"
+      },
+      "target": {
+        "type": "SpecificResource",
+        "source": "http://memoria-nord.cm/media/conte-01.mp3",
+        "selector": {
+          "type": "FragmentSelector",
+          "conformsTo": "http://www.w3.org/TR/media-frags/",
+          "value": "t=0,30"
+        }
+      }
+    }
+  ]
+}

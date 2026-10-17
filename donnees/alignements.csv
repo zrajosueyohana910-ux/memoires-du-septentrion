@@ -1,0 +1,11 @@
+entite,relation,cible,verifie,note
+langue:psikye,skos:exactMatch,Q56304,oui,"vérifié le 13/10/2026 sur wikidata.org"
+langue:fulfulde,skos:exactMatch,Q33454,oui,"vérifié le 13/10/2026"
+peuple:fulbe,skos:exactMatch,Q202575,oui,"vérifié le 13/10/2026"
+instrument:balafon,skos:exactMatch,Q789141,oui,"vérifié le 13/10/2026"
+lieu:cameroun,owl:sameAs,Q1009,oui,"vérifié le 13/10/2026"
+lieu:garoua,owl:sameAs,Q157915,oui,"corrigé : Q157915 (ville de Garoua), pas Q312582"
+peuple:kapsiki,skos:closeMatch,Q2437423,oui,"vérifié le 13/10/2026"
+peuple:mafa,skos:closeMatch,Q3276439,oui,"vérifié le 13/10/2026"
+lieu:monts-mandara,owl:sameAs,Q1888885,oui,"vérifié le 13/10/2026"
+site:diy-gid-biy,owl:sameAs,Q5285004,oui,"vérifié le 13/10/2026"

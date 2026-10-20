@@ -116,11 +116,11 @@ text
 
 | QC | Question | Type | État |
 |---|---|---|---|
-| **QC1** | Contes par peuple, langue, collectrice | Sélection | ✅ |
-| **QC2** | Instruments / rituels / peuples | Sélection | ⚠️ Vide |
-| **QC3** | Sites des Monts Mandara et période | Sélection | ✅ |
-| **QC4** | Libellé et description Wikidata | Fédérée | ✅ |
-| **QC5** | Comptage par catégorie | Agrégat | ✅ |
+| **QC1** | Contes par peuple, langue, collectrice | Sélection | OUI |
+| **QC2** | Instruments / rituels / peuples | Sélection | ATTENTION Vide |
+| **QC3** | Sites des Monts Mandara et période | Sélection | OUI |
+| **QC4** | Libellé et description Wikidata | Fédérée | OUI |
+| **QC5** | Comptage par catégorie | Agrégat | OUI |
 
 **Résultats** : QC1 (1 ligne), QC3 (2 sites), QC4 (10 lignes), QC5 (23 entités).
 

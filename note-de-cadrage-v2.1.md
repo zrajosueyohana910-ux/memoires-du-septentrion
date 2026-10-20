@@ -50,15 +50,15 @@ Concevoir et publier une archive hypermédia sémantique du patrimoine culturel 
 
 | Exigence | Seuil | État |
 |---|---|---|
-| Triplets RDF | ≥ 50 | **223** ✅ |
-| Entités | ≥ 15 | **23** ✅ |
-| Requêtes SPARQL | 5 (dont 1 fédérée, 1 agrégat) | **5 écrites** (QC2 vide assumée) ⚠️ |
-| Alignements externes | ≥ 10 | **10 vérifiés** ✅ |
-| Nœuds hypermédias | ≥ 8 | **17** (16 nœuds + 404) ✅ |
-| Accessibilité | WCAG AA | ✅ |
-| Charte graphique | — | **« Forêt & Mémoire »** ✅ |
-| Navigation UX | Hick, Fitts, Nielsen | ✅ |
-| Déploiement | — | **Vercel** ✅ |
+| Triplets RDF | ≥ 50 | **223** OUI |
+| Entités | ≥ 15 | **23** OUI |
+| Requêtes SPARQL | 5 (dont 1 fédérée, 1 agrégat) | **5 écrites** (QC2 vide assumée) ATTENTION |
+| Alignements externes | ≥ 10 | **10 vérifiés** OUI |
+| Nœuds hypermédias | ≥ 8 | **17** (16 nœuds + 404) OUI |
+| Accessibilité | WCAG AA | OUI |
+| Charte graphique | — | **« Forêt & Mémoire »** OUI |
+| Navigation UX | Hick, Fitts, Nielsen | OUI |
+| Déploiement | — | **Vercel** OUI |
 
 ---
 
@@ -100,11 +100,11 @@ Le corpus compte **23 entités** organisées en 10 catégories :
 
 | QC | Question | Type | État |
 |---|---|---|---|
-| **QC1** | Quels contes sont associés à quel peuple, dans quelle langue et collectés par qui ? | Sélection | ✅ |
-| **QC2** | Quels instruments sont joués lors de quels rituels ou fêtes, et par quels peuples ? | Sélection | ⚠️ Vide |
-| **QC3** | Quels sites patrimoniaux sont situés dans les Monts Mandara, et à quelle période remontent-ils ? | Sélection | ✅ |
-| **QC4** | Pour chaque entité alignée, quels sont le libellé et la description correspondants sur Wikidata ? | Fédérée | ✅ |
-| **QC5** | Combien d'entités par catégorie compte le graphe ? | Agrégat | ✅ |
+| **QC1** | Quels contes sont associés à quel peuple, dans quelle langue et collectés par qui ? | Sélection | OUI |
+| **QC2** | Quels instruments sont joués lors de quels rituels ou fêtes, et par quels peuples ? | Sélection | ATTENTION Vide |
+| **QC3** | Quels sites patrimoniaux sont situés dans les Monts Mandara, et à quelle période remontent-ils ? | Sélection | OUI |
+| **QC4** | Pour chaque entité alignée, quels sont le libellé et la description correspondants sur Wikidata ? | Fédérée | OUI |
+| **QC5** | Combien d'entités par catégorie compte le graphe ? | Agrégat | OUI |
 
 **QC2 est une limite assumée** : aucune source ne relie instruments, rituels et peuples.
 
@@ -116,11 +116,11 @@ Le corpus compte **23 entités** organisées en 10 catégories :
 
 | Couche | Composants | État |
 |---|---|---|
-| **5. Présentation** | HTML/CSS (17 nœuds), charte « Forêt & Mémoire » | ✅ |
-| **4. Logique** | Navigation hiérarchique, liens contextuels | ✅ |
-| **3. Accès** | Fuseki local, Wikidata (SERVICE) | ⏳ À charger |
-| **2. Conversion** | csv_vers_turtle.py, ttl_vers_json.py | ✅ |
-| **1. Données** | archive.ttl, 3 CSV, annotations.jsonld | ✅ |
+| **5. Présentation** | HTML/CSS (17 nœuds), charte « Forêt & Mémoire » | OUI |
+| **4. Logique** | Navigation hiérarchique, liens contextuels | OUI |
+| **3. Accès** | Fuseki local, Wikidata (SERVICE) | EN COURS À charger |
+| **2. Conversion** | csv_vers_turtle.py, ttl_vers_json.py | OUI |
+| **1. Données** | archive.ttl, 3 CSV, annotations.jsonld | OUI |
 
 ### 7.2 Outils
 
@@ -163,13 +163,13 @@ DCTerms, FOAF, SKOS, schema.org, PROV-O, Europeana Data Model, Web Annotation, M
 
 | Étape | État |
 |---|---|
-| 1. Cadrage | ✅ Fait (v2.1) |
-| 2. Conception | ✅ Dossier de conception v2.1 |
-| 3. Réalisation | ✅ Archive RDF, 5 requêtes, 17 nœuds HTML |
-| 4. Tests | ⏳ À faire (requêtes, utilisateurs) |
-| 5. Documentation | ✅ Guide technique, guide d'utilisation |
-| 6. Déploiement | ✅ Vercel |
-| 7. Soutenance | ⏳ À préparer |
+| 1. Cadrage | OUI Fait (v2.1) |
+| 2. Conception | OUI Dossier de conception v2.1 |
+| 3. Réalisation | OUI Archive RDF, 5 requêtes, 17 nœuds HTML |
+| 4. Tests | EN COURS À faire (requêtes, utilisateurs) |
+| 5. Documentation | OUI Guide technique, guide d'utilisation |
+| 6. Déploiement | OUI Vercel |
+| 7. Soutenance | EN COURS À préparer |
 
 ---
 

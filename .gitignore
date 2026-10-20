@@ -1,20 +1,29 @@
+# Environnement virtuel
 venv/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+
+# Backups
 *.backup*
 *.backup
-noeuds.backup_*/
-.DS_Store
 
-# Fichiers de travail / temporaires
-JM/
-lk/
-files/
-files.zip
-files(1).zip
-noeuds.zip
-argparse
-patrimoine_ontologie.json
-note-de-cadrage-v1.1.md
+# Archives (ne pas versionner)
+_archive/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.tmp
+*.log
+
+# Documents anciens
 *.docx
-*.zip
